@@ -1,12 +1,12 @@
-# ASD - AFE - Projeto Álbum de Fotos
+# ASD - AFE - Photo Album
 
-O **AFE Álbum de Fotos** é uma aplicação web para criação e apresentação de álbum de fotos utilizando diversas tecnologias de frontend. A aplicação foi desenvolvida como resultado do laboratório 01 da aula de Arquitetura de Front-end, na pós-graduação em Arquitetura de Software Distribuído, da PUC Minas.
+The **Photo Album** is a web application to create and show photo albums using several front-end technologies. The application was developed as a result of the Lab 01 of the Front-end Architecture discipline, in the Distributed Software Architecture postgraduate, at PUC Minas.
 
-## Instalação
+## Intallation
 
 1. ...
 
-## Sobre o ambiente de desenvolvimento
+## About the development environment
 
 - node v6.11.0
 - npm v3.10.10
@@ -18,10 +18,4 @@ O **AFE Álbum de Fotos** é uma aplicação web para criação e apresentação
 - GitFlow Workflow
 - Tower 2.4.0 for OSx
 
-## Histórias de usuário implementadas
-
-**Como usuário do AFE Álbum de Fotos eu quero ...**
-
-Critérios de aceitação:
-
-1. ...
+## Implemented user stories
