@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/renattomartins/asd-afe-photo-album/issues"
   },
-  "homepage": "https://github.com/renattomartins/asd-afe-photo-album#readme"
+  "homepage": "https://github.com/renattomartins/asd-afe-photo-album#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
 }

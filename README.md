@@ -9,7 +9,7 @@ The **Photo Album** is a web application to create and show photo albums using s
 ## About the development environment
 
 - node v6.11.0
-- npm v3.10.10
+- npm v5.20.0
 - HTML5 Boilerplate 5.3.0
 - jQuery 1.11.2
 - Atom 1.18.0.
