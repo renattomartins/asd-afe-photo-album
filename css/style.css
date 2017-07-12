@@ -1,5 +1,7 @@
-#painel {
-    background-color: lightblue;
-    min-width: 400px;
-    min-height: 400px;
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
 }
