@@ -25,34 +25,95 @@
 
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Photo Album</a>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Photo Album</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">App</a></li>
+                    <li><a href="#">Components</a></li>
+                    <li><a href="#">GitHub</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">App</a></li>
-            <li><a href="#">Components</a></li>
-            <li><a href="#">GitHub</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
     </nav>
 
-    <div class="container">
-
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
-
-    </div><!-- /.container -->
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="albums-list">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-1">
+                            <h2>Álbuns</h2>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-primary" title="Novo álbum">+</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="#" class="album-cover">
+                                <img src="http://lorempixel.com/180/180/people/1" class="img-responsive img-thumbnail center-block">
+                                <span class="album-cover-caption">(1 foto)</span>
+                            </a>
+                            <a href="#" class="album-cover">
+                                <img src="http://lorempixel.com/180/180/people/2" class="img-responsive img-thumbnail center-block">
+                                <span class="album-cover-caption">(4 fotos)</span>
+                            </a>
+                            <a href="#" class="album-cover">
+                                <img src="http://lorempixel.com/180/180/people/3" class="img-responsive img-thumbnail center-block">
+                                <span class="album-cover-caption">(2 fotos)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="panel-photos row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Photo Album</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel-photos-area">
+                                    <a href="#" class="photo-thumbnail-wrap">
+                                        <img src="http://lorempixel.com/100/100/people/1" class="photo-thumbnail img-responsive img-rounded">
+                                    </a>
+                                </div>
+                                <div class="panel-photos-area">
+                                    <a href="#" class="photo-thumbnail-wrap">
+                                        <img src="http://lorempixel.com/100/100/people/1" class="photo-thumbnail img-responsive img-rounded">
+                                    </a>
+                                </div>
+                                <div class="panel-photos-area">
+                                    <a href="#" class="photo-thumbnail-wrap">
+                                        <img src="http://lorempixel.com/100/100/people/1" class="photo-thumbnail img-responsive img-rounded">
+                                    </a>
+                                </div>
+                                <div class="panel-photos-area">
+                                    <a href="#" class="photo-thumbnail-wrap">
+                                        <img src="http://lorempixel.com/100/100/people/1" class="photo-thumbnail img-responsive img-rounded">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
