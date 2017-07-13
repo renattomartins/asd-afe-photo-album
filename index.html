@@ -33,81 +33,82 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Photo Album</a>
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                    Photo Album
+                 </a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">App</a></li>
-                    <li><a href="#">Components</a></li>
-                    <li><a href="#">GitHub</a></li>
+                    <li class="active"><a href="index.html">App</a></li>
+                    <li><a href="components.html">Components</a></li>
+                    <li><a href="https://github.com/renattomartins/asd-afe-photo-album">GitHub</a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
         </div>
     </nav>
 
-    <div class="container main">
+    <div class="container main-container">
         <div class="row">
-            <div class="col-md-3">
-                <div class="albums-list">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-1">
-                            <h2>Álbuns</h2>
-                        </div>
-                        <div class="col-md-2">
-                            <button type="button" class="btn btn-primary" title="Novo álbum">+</button>
+            <!-- First column: Album list -->
+            <div class="col-sm-3">
+                <div class="panel panel-default panel-albums-list">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Todos os álbuns</h3>
+                        <button type="button" class="btn btn-primary btn-xs btn-albums-list-add" title="Novo álbum" aria-label="Novo álbum">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="album">
+                                    <img src="http://lorempixel.com/180/180/people/1" class="album-img img-thumbnail center-block">
+                                    <div class="album-details text-center">
+                                        <span class="album-details-name">
+                                            Álbum de pessoas
+                                        </span>
+                                        <small class="album-details-total">
+                                            (1 foto)
+                                        </small>
+                                    </div>
+                                    <div class="album-actions text-center">
+                                        <button type="button" class="btn btn-link btn-xs" title="Abrir álbum" aria-label="Abrir álbum"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></button> |
+                                        <button type="button" class="btn btn-link btn-xs" title="Excluir álbum" aria-label="Excluir álbum"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                    </div>
+                                </div>
+                                <div class="album">
+                                    <img src="http://lorempixel.com/180/180/sports/1" class="album-img img-thumbnail center-block">
+                                    <div class="album-details text-center">
+                                        <span class="album-details-name">
+                                            Álbum de esportes
+                                        </span>
+                                        <span class="album-details-total">
+                                            (3 fotos)
+                                        </span>
+                                    </div>
+                                    <div class="album-actions text-center">
+                                        <button type="button" class="btn btn-link btn-xs" title="Abrir álbum" aria-label="Abrir álbum"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></button> |
+                                        <button type="button" class="btn btn-link btn-xs" title="Excluir álbum" aria-label="Excluir álbum"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <a href="#" class="album-cover">
-                                <img src="http://lorempixel.com/180/180/people/1" class="img-responsive img-thumbnail center-block">
-                                <span class="album-cover-caption">(1 foto)</span>
-                            </a>
-                            <a href="#" class="album-cover">
-                                <img src="http://lorempixel.com/180/180/people/2" class="img-responsive img-thumbnail center-block">
-                                <span class="album-cover-caption">(4 fotos)</span>
-                            </a>
-                            <a href="#" class="album-cover">
-                                <img src="http://lorempixel.com/180/180/people/3" class="img-responsive img-thumbnail center-block">
-                                <span class="album-cover-caption">(2 fotos)</span>
-                            </a>
-                        </div>
+                    <div class="panel-footer">
+                        0 álbuns criados
                     </div>
                 </div>
             </div>
-            <div class="col-md-9">
-                <div class="panel-photos row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h1>Photo Album</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="panel-photos-area">
-                                    <a href="#" class="photo-thumbnail-wrap">
-                                        <img src="http://lorempixel.com/100/100/people/1" class="photo-thumbnail img-responsive img-rounded">
-                                    </a>
-                                </div>
-                                <div class="panel-photos-area">
-                                    <a href="#" class="photo-thumbnail-wrap">
-                                        <img src="http://lorempixel.com/100/100/people/1" class="photo-thumbnail img-responsive img-rounded">
-                                    </a>
-                                </div>
-                                <div class="panel-photos-area">
-                                    <a href="#" class="photo-thumbnail-wrap">
-                                        <img src="http://lorempixel.com/100/100/people/1" class="photo-thumbnail img-responsive img-rounded">
-                                    </a>
-                                </div>
-                                <div class="panel-photos-area">
-                                    <a href="#" class="photo-thumbnail-wrap">
-                                        <img src="http://lorempixel.com/100/100/people/1" class="photo-thumbnail img-responsive img-rounded">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+
+            <!-- Second column: Album photos -->
+            <div class="col-sm-9">
+                <div class="panel panel-default panel-photos">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Álbum: Álbum de pessoas</h2>
+                    </div>
+                    <div class="panel-body">
                     </div>
                 </div>
             </div>

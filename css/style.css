@@ -1,3 +1,5 @@
+/** Base rules **/
+
 body {
     padding-top: 50px;
     background-color: #333;
@@ -5,31 +7,48 @@ body {
     box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
 }
 
-.main {
+/** Layout rules **/
+.main-container {
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
-.albums-list {
-    background-color: rgba(255, 255, 255, .2);
-    border-radius: 10px;
+/** Module rules **/
+
+/** Module 'Album List' **/
+.panel-albums-list {
+    position: relative;
 }
-.album-cover {
-    display: block;
+.btn-albums-list-add {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+}
+.panel-albums-list > .panel-body {
+    min-height: 200px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+.album {
     margin-bottom: 10px;
 }
-.album-cover-caption {
-    display: block;
-    text-align: center;
+.album-details {
     padding: 3px;
 }
-
-.panel-photos {
-    background-color: rgba(255, 255, 255, .2);
-    border-radius: 10px;
+.album-details-name {
+    display: block;
+}
+.album-details-total {
+    display: block;
 }
 
-.photo-thumbnail-wrap {
-    margin: 10px;
-    float: left;
+/** Module 'Photos Panal' **/
+.panel-photos {
+    /*background-color: rgba(255, 255, 255, .2);
+    border-radius: 10px;*/
+}
+.panel-photos > .panel-body {
+    min-height: 240px;
+    max-height: 640px;
+    overflow-y: auto;
 }
