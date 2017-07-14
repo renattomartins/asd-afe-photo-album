@@ -136,6 +136,10 @@
                 <div class="panel panel-default panel-photos album-selected has-photos">
                     <div class="panel-heading">
                         <h2 class="panel-title">Álbum: <span class="panel-photos-title">Álbum de pessoas</span></h2>
+                        <button type="button" class="btn btn-primary btn-xs btn-slide-show" title="Visualizar álbum em slide show" aria-label="Visualizar álbum em slide show">
+                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                            Slide Show
+                        </button>
                     </div>
                     <div class="panel-body">
 
@@ -233,6 +237,48 @@
         </div>
     </div>
     <!-- /.container -->
+
+    <!-- .slide-show -->
+    <div class="slide-show" style="display:none;">
+        <div class="carousel slide" data-ride="carousel">
+
+            <button type="button" class="btn btn-default btn-close-slide-show" title="Fechar Slide Show" aria-label="Fechar Slide Show">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#img-1" data-slide-to="0" class="active"></li>
+                <li data-target="#img-2" data-slide-to="1"></li>
+                <li data-target="#img-3" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="http://lorempixel.com/400/500/people/1" alt="Imagem do álbum" class="img-responsive center-block">
+                </div>
+                <div class="item">
+                    <img src="http://lorempixel.com/400/500/people/2" alt="Imagem do álbum" class="img-responsive center-block">
+                </div>
+                <div class="item">
+                    <img src="http://lorempixel.com/500/500/people/3" alt="Imagem do álbum" class="img-responsive center-block">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#prev-photo" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="right carousel-control" href="#next-photo" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Seguinte</span>
+            </a>
+        </div>
+        <div class="overlay"></div>
+    </div>
+    <!-- /.slide-show -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
