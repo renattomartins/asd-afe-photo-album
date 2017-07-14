@@ -53,8 +53,6 @@ body {
 
 .panel-albums-list>.panel-body {
     min-height: 200px;
-    max-height: 600px;
-    overflow-y: auto;
 }
 
 .panel-albums-list-area {
@@ -105,8 +103,12 @@ body {
     background-color: #fff;
 }
 
+.btn-delete-album:hover {
+    color: red;
+}
 
-/** Module 'Photos Panel' **/
+
+/** Module 'Panel Photos' **/
 
 .panel-photos {}
 
@@ -114,15 +116,66 @@ body {
 
 .panel-photos>.panel-body {
     min-height: 240px;
-    max-height: 640px;
-    overflow-y: auto;
 }
 
-.panel-photos-msg-no-album {}
+.panel-photos-msg-no-album-selected {
+    display: block;
+}
 
-.panel-photos-msg-empty {}
+.panel-photos-msg-empty {
+    display: none;
+}
 
-.panel-photos-main-area {}
+.panel-photos-main-area {
+    display: none;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+.panel-photos-main-area>.row>div {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+/** Module 'Photo Item' **/
+
+.photo-item {}
+
+.photo-img {}
+
+.btn-delete-photo, .btn-delete-photo:active, .btn-delete-photo:focus, .btn-delete-photo:hover {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.photo-item:hover>.btn-delete-photo {
+    color: red;
+    background-color: #fff;
+}
+
+
+/* State rules for 'Panel Photos' */
+
+.panel-photos.album-selected .panel-photos-msg-no-album-selected {
+    display: none;
+}
+
+.panel-photos.album-selected .panel-photos-msg-empty {
+    display: block;
+}
+
+.panel-photos.album-selected.has-photos .panel-photos-msg-empty {
+    display: none;
+}
+
+.panel-photos.album-selected.has-photos .panel-photos-main-area {
+    display: block;
+}
+
 
 /** Module 'Search Area' **/
 

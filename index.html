@@ -53,6 +53,7 @@
         <div class="row">
             <!-- First column: Album list -->
             <div class="col-sm-3">
+                <!-- Control class: has-items -->
                 <div class="panel panel-default panel-albums-list has-items">
                     <div class="panel-heading">
                         <h3 class="panel-title">Todos os álbuns</h3>
@@ -131,14 +132,15 @@
 
             <!-- Second column: Album photos -->
             <div class="col-sm-9">
-                <div class="panel panel-default panel-photos">
+                <!-- Control classes: album-selected has-photos -->
+                <div class="panel panel-default panel-photos album-selected has-photos">
                     <div class="panel-heading">
-                        <h2 class="panel-title">Álbum: <span class="panel-photos-title">(Nenhum álbum selecionado)</span></h2>
+                        <h2 class="panel-title">Álbum: <span class="panel-photos-title">Álbum de pessoas</span></h2>
                     </div>
                     <div class="panel-body">
 
                         <!-- When no album are selected -->
-                        <div class="place-holder-msg panel-photos-msg-no-album">
+                        <div class="place-holder-msg panel-photos-msg-no-album-selected">
                             <h5>Nenhum álbum foi selecionado <small>(selecione um álbum na lista ao lado)</small></h5>
                         </div>
 
@@ -147,10 +149,37 @@
                             <h5>Esse álbum não possui fotos <small>(pesquise algumas fotos na caixa de busca abaixo e as adicione no seu álbum)</small></h5>
                         </div>
 
+                        <!-- When album are selected and has one or more photos -->
                         <div class="panel-photos-main-area">
-                            <!-- Album Photos come here -->
+                            <div class="row">
+                                <!-- Album Photos come here, inside col-md -->
+                                <div class="col-xs-6 col-sm-3 photo-item">
+                                    <img src="http://lorempixel.com/300/300/people/1" class="img-responsive img-rounded photo-img">
+                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 photo-item">
+                                    <img src="http://lorempixel.com/300/300/people/9" class="img-responsive img-rounded photo-img">
+                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 photo-item">
+                                    <img src="http://lorempixel.com/300/300/people/2" class="img-responsive img-rounded photo-img">
+                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 photo-item">
+                                    <img src="http://lorempixel.com/300/300/people/3" class="img-responsive img-rounded photo-img">
+                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 photo-item">
+                                    <img src="http://lorempixel.com/300/300/people/7" class="img-responsive img-rounded photo-img">
+                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="search-area panel panel-primary hidden">
+
+                        <!-- As an independent component, the ".search-area" has its visibility
+                             handed via JavaScript -->
+                        <!-- Control class: hidden -->
+                        <div class="search-area panel panel-primary">
                             <div class="panel-heading">
                                 Pesquise fotos no Shutterstock
                             </div>
@@ -169,7 +198,8 @@
                                         </form>
                                     </div>
                                 </div>
-                                <div class="search-area-results">
+                                <!-- Control class: hidden -->
+                                <div class="search-area-results hidden">
                                     <h4>Resultado para a busca <small> (clique na foto para adicioná-la ao seu álbum local)</small></h4>
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-3 col-md-2">
