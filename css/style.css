@@ -76,6 +76,7 @@ body {
 .album-item {
     position: relative;
     margin-bottom: 10px;
+    max-width: 230px;
 }
 
 .album-item-img {}
@@ -146,9 +147,11 @@ body {
 
 /** Module 'Photo Item' **/
 
-.photo-item {}
+.photo-item {
+    position: relative;
+}
 
-.photo-img {}
+.photo-item-img {}
 
 .btn-delete-photo, .btn-delete-photo:active, .btn-delete-photo:focus, .btn-delete-photo:hover {
     position: absolute;
