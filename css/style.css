@@ -45,7 +45,7 @@ body {
     position: relative;
 }
 
-.btn-albums-list-add {
+.btn-add-album {
     position: absolute;
     top: 7px;
     right: 7px;
@@ -189,7 +189,7 @@ body {
 
 .search-area-input {}
 
-.search-area-btn-search {}
+.btn-do-search {}
 
 .search-area-results {
     background: #eaeaea;
