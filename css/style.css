@@ -7,48 +7,84 @@ body {
     box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
 }
 
+
 /** Layout rules **/
+
 .main-container {
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
+
 /** Module rules **/
 
+
 /** Module 'Album List' **/
+
 .panel-albums-list {
     position: relative;
 }
+
 .btn-albums-list-add {
     position: absolute;
     top: 7px;
     right: 7px;
 }
-.panel-albums-list > .panel-body {
+
+.panel-albums-list>.panel-body {
     min-height: 200px;
     max-height: 600px;
     overflow-y: auto;
 }
+
 .album {
     margin-bottom: 10px;
 }
+
 .album-details {
     padding: 3px;
 }
+
 .album-details-name {
     display: block;
 }
+
 .album-details-total {
     display: block;
 }
 
-/** Module 'Photos Panal' **/
+
+/** Module 'Photos Panel' **/
+
 .panel-photos {
     /*background-color: rgba(255, 255, 255, .2);
     border-radius: 10px;*/
 }
-.panel-photos > .panel-body {
+
+.panel-photos>.panel-body {
     min-height: 240px;
     max-height: 640px;
     overflow-y: auto;
+}
+
+
+/** Module 'Search Area' **/
+
+.search-area {}
+.search-area-input {}
+.search-area-btn-search {}
+.search-area-results {
+    background: #eaeaea;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 20px;
+}
+.search-area-results > h4 {
+    color: #666;
+    font-size: 16px;
+    margin: 0px;
+}
+.search-area-results > .row > div {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
