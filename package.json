@@ -1,0 +1,32 @@
+{
+  "name": "photo-album-app",
+  "version": "1.0.0",
+  "description": "A photo album as a POC to Front-end Architecture discipline.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renattomartins/asd-afe-photo-album.git"
+  },
+  "keywords": [
+    "distributed-software-architecture",
+    "postgraduate",
+    "frontend",
+    "spa",
+    "single-page-app",
+    "rwd",
+    "bootstrap"
+  ],
+  "author": "Renato Martins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renattomartins/asd-afe-photo-album/issues"
+  },
+  "homepage": "https://github.com/renattomartins/asd-afe-photo-album#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}

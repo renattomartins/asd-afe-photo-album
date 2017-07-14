@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="A photo album as a POC to Front-end Architecture discipline.">
+    <meta name="author" content="Renato Martins">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Components - AFE - ASD</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                    Photo Album
+                 </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">App</a></li>
+                    <li class="active"><a href="components.html">Components</a></li>
+                    <li><a href="https://github.com/renattomartins/asd-afe-photo-album">GitHub</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container main-container">
+        <div class="row">
+            <!-- Single column to show the components -->
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h1>Biblioteca de Componentes do projeto Photo Album</h1>
+                        <p>Os componentes do projeto tiveram a marcação HTML e a estilização CSS cuidadosamente feitas.</p>
+                        <p>Abaixo seguem os principais componentes, sendo eles:</p>
+                        <ol>
+                            <li>Álbum (item de álbum)</li>
+                            <li>Lista de Álbuns</li>
+                            <li>Foto (item do painel de fotos)</li>
+                            <li>Painel de fotos</li>
+                            <li>Área de busca</li>
+                            <li>Slide Show</li>
+                        </ol>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <h2>Álbum <small>(item de álbum)</small></h2>
+
+                            <!-- Album item Component -->
+                            <div class="album-item">
+                                <a href="#" class="btn-view-album" title="Álbum de pessoas">
+                                    <img src="http://lorempixel.com/230/180/people/1" class="album-item-img img-thumbnail">
+                                </a>
+                                <div class="album-item-details">
+                                    <a href="#" class="btn-view-album album-item-details-name" title="Álbum de pessoas">
+                                        Álbum de pessoas
+                                    </a>
+                                    <small class="album-item-details-total">
+                                        (1 foto)
+                                    </small>
+                                </div>
+                                <button type="button" class="btn btn-link btn-xs btn-delete-album" title="Excluir álbum" aria-label="Excluir álbum"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                            </div>
+                            <!-- /Album item Component -->
+
+                        </li>
+                        <li class="list-group-item">
+                            <h2>Lista de Álbuns</h2>
+
+                            <p>A classe <code>.has-items</code> é a que alterna o estado desse componentes entre sem item e com itens.</p>
+
+                            <!-- Album List Component (sem itens) -->
+                            <div class="col-sm-3">
+                                <!-- Control class: has-items -->
+                                <div class="panel panel-default panel-albums-list">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Todos os álbuns</h3>
+                                        <button type="button" class="btn btn-primary btn-xs btn-add-album" title="Novo álbum" aria-label="Novo álbum">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <!-- When no album created -->
+                                        <div class="place-holder-msg panel-album-list-msg-empty">
+                                            <h5>Não há álbuns cadastrados <small>(clique no botão "+" para cadastrar seu primeiro álbum)</small></h5>
+                                        </div>
+
+                                        <!-- When one or more albums created -->
+                                        <div class="panel-albums-list-area row">
+                                            <div class="col-sm-12">
+                                                <!-- Album items come here -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        0 álbuns criados
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Album List Component -->
+
+
+
+                            <!-- Album List Component (com itens)-->
+                            <div class="col-sm-3">
+                                <!-- Control class: has-items -->
+                                <div class="panel panel-default panel-albums-list has-items">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Todos os álbuns</h3>
+                                        <button type="button" class="btn btn-primary btn-xs btn-add-album" title="Novo álbum" aria-label="Novo álbum">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <!-- When no album created -->
+                                        <div class="place-holder-msg panel-album-list-msg-empty">
+                                            <h5>Não há álbuns cadastrados <small>(clique no botão "+" para cadastrar seu primeiro álbum)</small></h5>
+                                        </div>
+
+                                        <!-- When one or more albums created -->
+                                        <div class="panel-albums-list-area row">
+                                            <div class="col-sm-12">
+                                                <!-- Album items come here -->
+
+                                                <!-- Album item #1 -->
+                                                <div class="album-item">
+                                                    <a href="#" class="btn-view-album" title="Álbum de pessoas">
+                                                        <img src="http://lorempixel.com/230/180/people/1" class="album-item-img img-thumbnail">
+                                                    </a>
+                                                    <div class="album-item-details">
+                                                        <a href="#" class="btn-view-album album-item-details-name" title="Álbum de pessoas">
+                                                            Álbum de pessoas
+                                                        </a>
+                                                        <small class="album-item-details-total">
+                                                            (1 foto)
+                                                        </small>
+                                                    </div>
+                                                    <button type="button" class="btn btn-link btn-xs btn-delete-album" title="Excluir álbum" aria-label="Excluir álbum"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                </div>
+
+                                                <!-- Album item #2 -->
+                                                <div class="album-item">
+                                                    <a href="#" class="btn-view-album" title="Álbum de esportes">
+                                                        <img src="http://lorempixel.com/230/230/sports/1" class="album-item-img img-thumbnail">
+                                                    </a>
+                                                    <div class="album-item-details">
+                                                        <a href="#" class="btn-view-album album-item-details-name" title="Álbum de esportes">
+                                                            Álbum de esportes
+                                                        </a>
+                                                        <small class="album-item-details-total">
+                                                            (3 fotos)
+                                                        </small>
+                                                    </div>
+                                                    <button type="button" class="btn btn-link btn-xs btn-delete-album" title="Excluir álbum" aria-label="Excluir álbum"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        0 álbuns criados
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Album List Component -->
+
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="list-group-item">
+                            <h2>Foto <small>(item do painel de fotos)</small></h2>
+
+                            <!-- Photo item Component -->
+                            <div class="col-xs-6 col-sm-3 photo-item">
+                                <img src="http://lorempixel.com/230/230/people/1" class="img-responsive img-rounded photo-img">
+                                <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                            </div>
+                            <!-- /Photo item Component -->
+
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="list-group-item">
+                            <h2>Painel de fotos</h2>
+
+                            <p>Abaixo, seguem três representações dos três possíveis estados do componentes painel de fotos. As classes fundamentais para isso são <code>.album-selected</code> e <code>has-photos</code>.</p>
+                            <p>Observe que ele é um <strong>componente composto</strong> e possui dentro dele um outro componente que pode funcionar sozinho: a <strong>Área de busca</strong>.
+                            <br /><br />
+
+                            <!-- Panel photos Component -->
+                            <div class="col-sm-9">
+                                <!-- Control classes: album-selected has-photos -->
+                                <div class="panel panel-default panel-photos">
+                                    <div class="panel-heading">
+                                        <h2 class="panel-title">Álbum: <span class="panel-photos-title">Álbum de pessoas</span></h2>
+                                        <button type="button" class="btn btn-primary btn-xs btn-slide-show" title="Visualizar álbum em slide show" aria-label="Visualizar álbum em slide show">
+                                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                                            Slide Show
+                                        </button>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <!-- When no album are selected -->
+                                        <div class="place-holder-msg panel-photos-msg-no-album-selected">
+                                            <h5>Nenhum álbum foi selecionado <small>(selecione um álbum na lista ao lado)</small></h5>
+                                        </div>
+
+                                        <!-- When album are selected, but has no photo -->
+                                        <div class="place-holder-msg panel-photos-msg-empty">
+                                            <h5>Esse álbum não possui fotos <small>(pesquise algumas fotos na caixa de busca abaixo e as adicione no seu álbum)</small></h5>
+                                        </div>
+
+                                        <!-- When album are selected and has one or more photos -->
+                                        <div class="panel-photos-main-area">
+                                            <div class="row">
+                                                <!-- Album Photos come here, inside col-md -->
+                                            </div>
+                                        </div>
+
+                                        <!-- As an independent component, the ".search-area" has its visibility
+                                             handed via JavaScript -->
+                                        <!-- Control class: hidden -->
+                                        <div class="search-area panel panel-primary">
+                                            <div class="panel-heading">
+                                                Pesquise fotos no Shutterstock
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <p>Pesquise fotos no Shutterstock para adicionar no seu álbum local:</p>
+                                                        <form action="index.html" method="get">
+                                                            <div class="input-group">
+                                                                <input type="text" name="q" class="form-control search-area-input" placeholder="Pesquise por exemplo por 'People' ou 'Sports'...">
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-default btn-do-search" type="submit">Pesquisar!</button>
+                                                                </span>
+                                                            </div>
+                                                            <!-- /input-group -->
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <!-- Control class: hidden -->
+                                                <div class="search-area-results hidden">
+                                                    <h4>Resultado para a busca <small> (clique na foto para adicioná-la ao seu álbum local)</small></h4>
+                                                    <div class="row">
+                                                        <!-- Photos results come here -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Panel photos Component -->
+
+                            <br /><br />
+
+                            <!-- Panel photos Component -->
+                            <div class="col-sm-9">
+                                <!-- Control classes: album-selected has-photos -->
+                                <div class="panel panel-default panel-photos album-selected">
+                                    <div class="panel-heading">
+                                        <h2 class="panel-title">Álbum: <span class="panel-photos-title">Álbum de pessoas</span></h2>
+                                        <button type="button" class="btn btn-primary btn-xs btn-slide-show" title="Visualizar álbum em slide show" aria-label="Visualizar álbum em slide show">
+                                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                                            Slide Show
+                                        </button>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <!-- When no album are selected -->
+                                        <div class="place-holder-msg panel-photos-msg-no-album-selected">
+                                            <h5>Nenhum álbum foi selecionado <small>(selecione um álbum na lista ao lado)</small></h5>
+                                        </div>
+
+                                        <!-- When album are selected, but has no photo -->
+                                        <div class="place-holder-msg panel-photos-msg-empty">
+                                            <h5>Esse álbum não possui fotos <small>(pesquise algumas fotos na caixa de busca abaixo e as adicione no seu álbum)</small></h5>
+                                        </div>
+
+                                        <!-- When album are selected and has one or more photos -->
+                                        <div class="panel-photos-main-area">
+                                            <div class="row">
+                                                <!-- Album Photos come here, inside col-md -->
+                                            </div>
+                                        </div>
+
+                                        <!-- As an independent component, the ".search-area" has its visibility
+                                             handed via JavaScript -->
+                                        <!-- Control class: hidden -->
+                                        <div class="search-area panel panel-primary">
+                                            <div class="panel-heading">
+                                                Pesquise fotos no Shutterstock
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <p>Pesquise fotos no Shutterstock para adicionar no seu álbum local:</p>
+                                                        <form action="index.html" method="get">
+                                                            <div class="input-group">
+                                                                <input type="text" name="q" class="form-control search-area-input" placeholder="Pesquise por exemplo por 'People' ou 'Sports'...">
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-default btn-do-search" type="submit">Pesquisar!</button>
+                                                                </span>
+                                                            </div>
+                                                            <!-- /input-group -->
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <!-- Control class: hidden -->
+                                                <div class="search-area-results hidden">
+                                                    <h4>Resultado para a busca <small> (clique na foto para adicioná-la ao seu álbum local)</small></h4>
+                                                    <div class="row">
+                                                        <!-- Photos results come here -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Panel photos Component -->
+
+                            <br /><br />
+
+                            <!-- Panel photos Component -->
+                            <div class="col-sm-9">
+                                <!-- Control classes: album-selected has-photos -->
+                                <div class="panel panel-default panel-photos album-selected has-photos">
+                                    <div class="panel-heading">
+                                        <h2 class="panel-title">Álbum: <span class="panel-photos-title">Álbum de pessoas</span></h2>
+                                        <button type="button" class="btn btn-primary btn-xs btn-slide-show" title="Visualizar álbum em slide show" aria-label="Visualizar álbum em slide show">
+                                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                                            Slide Show
+                                        </button>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <!-- When no album are selected -->
+                                        <div class="place-holder-msg panel-photos-msg-no-album-selected">
+                                            <h5>Nenhum álbum foi selecionado <small>(selecione um álbum na lista ao lado)</small></h5>
+                                        </div>
+
+                                        <!-- When album are selected, but has no photo -->
+                                        <div class="place-holder-msg panel-photos-msg-empty">
+                                            <h5>Esse álbum não possui fotos <small>(pesquise algumas fotos na caixa de busca abaixo e as adicione no seu álbum)</small></h5>
+                                        </div>
+
+                                        <!-- When album are selected and has one or more photos -->
+                                        <div class="panel-photos-main-area">
+                                            <div class="row">
+                                                <!-- Album Photos come here, inside col-md -->
+                                                <div class="col-xs-6 col-sm-3 photo-item">
+                                                    <img src="http://lorempixel.com/300/300/people/1" class="img-responsive img-rounded photo-img">
+                                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-3 photo-item">
+                                                    <img src="http://lorempixel.com/300/300/people/9" class="img-responsive img-rounded photo-img">
+                                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-3 photo-item">
+                                                    <img src="http://lorempixel.com/300/300/people/2" class="img-responsive img-rounded photo-img">
+                                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-3 photo-item">
+                                                    <img src="http://lorempixel.com/300/300/people/3" class="img-responsive img-rounded photo-img">
+                                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-3 photo-item">
+                                                    <img src="http://lorempixel.com/300/300/people/7" class="img-responsive img-rounded photo-img">
+                                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- As an independent component, the ".search-area" has its visibility
+                                             handed via JavaScript -->
+                                        <!-- Control class: hidden -->
+                                        <div class="search-area panel panel-primary">
+                                            <div class="panel-heading">
+                                                Pesquise fotos no Shutterstock
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <p>Pesquise fotos no Shutterstock para adicionar no seu álbum local:</p>
+                                                        <form action="index.html" method="get">
+                                                            <div class="input-group">
+                                                                <input type="text" name="q" class="form-control search-area-input" placeholder="Pesquise por exemplo por 'People' ou 'Sports'...">
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-default btn-do-search" type="submit">Pesquisar!</button>
+                                                                </span>
+                                                            </div>
+                                                            <!-- /input-group -->
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <!-- Control class: hidden -->
+                                                <div class="search-area-results hidden">
+                                                    <h4>Resultado para a busca <small> (clique na foto para adicioná-la ao seu álbum local)</small></h4>
+                                                    <div class="row">
+                                                        <div class="col-xs-6 col-sm-3 col-md-2">
+                                                            <img src="http://lorempixel.com/160/160/people/1" class="img-responsive img-rounded">
+                                                        </div>
+                                                        <div class="col-xs-6 col-sm-3 col-md-2">
+                                                            <img src="http://lorempixel.com/160/160/people/2" class="img-responsive img-rounded">
+                                                        </div>
+                                                        <div class="col-xs-6 col-sm-3 col-md-2">
+                                                            <img src="http://lorempixel.com/160/160/people/3" class="img-responsive img-rounded">
+                                                        </div>
+                                                        <div class="col-xs-6 col-sm-3 col-md-2">
+                                                            <img src="http://lorempixel.com/160/160/people/4" class="img-responsive img-rounded">
+                                                        </div>
+                                                        <div class="col-xs-6 col-sm-3 col-md-2">
+                                                            <img src="http://lorempixel.com/160/160/people/5" class="img-responsive img-rounded">
+                                                        </div>
+                                                        <div class="col-xs-6 col-sm-3 col-md-2">
+                                                            <img src="http://lorempixel.com/160/160/people/6" class="img-responsive img-rounded">
+                                                        </div>
+                                                        <div class="col-xs-6 col-sm-3 col-md-2">
+                                                            <img src="http://lorempixel.com/160/160/people/7" class="img-responsive img-rounded">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Panel photos Component -->
+
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="list-group-item">
+                            <h2>Área de busca</h2>
+                            <p>Observe que a área de busca é um componente independente com <strong>largura fluida</strong> que pode ser colocado em várias partes do layout. A exibição da área de resultados de busca deve ser controlada via JavaScript.</p>
+                            <br />
+
+                            <!-- Search Area Component -->
+                            <div class="search-area panel panel-primary">
+                                <div class="panel-heading">
+                                    Pesquise fotos no Shutterstock
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <p>Pesquise fotos no Shutterstock para adicionar no seu álbum local:</p>
+                                            <form action="index.html" method="get">
+                                                <div class="input-group">
+                                                    <input type="text" name="q" class="form-control search-area-input" placeholder="Pesquise por exemplo por 'People' ou 'Sports'...">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default btn-do-search" type="submit">Pesquisar!</button>
+                                                    </span>
+                                                </div>
+                                                <!-- /input-group -->
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- Control class: hidden -->
+                                    <div class="search-area-results">
+                                        <h4>Resultado para a busca <small> (clique na foto para adicioná-la ao seu álbum local)</small></h4>
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-3 col-md-2">
+                                                <img src="http://lorempixel.com/160/160/people/1" class="img-responsive img-rounded">
+                                            </div>
+                                            <div class="col-xs-6 col-sm-3 col-md-2">
+                                                <img src="http://lorempixel.com/160/160/people/2" class="img-responsive img-rounded">
+                                            </div>
+                                            <div class="col-xs-6 col-sm-3 col-md-2">
+                                                <img src="http://lorempixel.com/160/160/people/3" class="img-responsive img-rounded">
+                                            </div>
+                                            <div class="col-xs-6 col-sm-3 col-md-2">
+                                                <img src="http://lorempixel.com/160/160/people/4" class="img-responsive img-rounded">
+                                            </div>
+                                            <div class="col-xs-6 col-sm-3 col-md-2">
+                                                <img src="http://lorempixel.com/160/160/people/5" class="img-responsive img-rounded">
+                                            </div>
+                                            <div class="col-xs-6 col-sm-3 col-md-2">
+                                                <img src="http://lorempixel.com/160/160/people/6" class="img-responsive img-rounded">
+                                            </div>
+                                            <div class="col-xs-6 col-sm-3 col-md-2">
+                                                <img src="http://lorempixel.com/160/160/people/7" class="img-responsive img-rounded">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Search Area Component -->
+
+                        </li>
+                        <li class="list-group-item">
+                            <h2>Slide Show</h2>
+                            <p>O compomente slide-show possui possui posição absoluta e ocupa todo viewport.</p>
+                            <p>Clique no botão abaixo para ver seu funcionamento:</p>
+                            <button type="button" class="btn btn-primary btn-xs btn-slide-show" title="Visualizar álbum em slide show" aria-label="Visualizar álbum em slide show" style="position: static;">
+                                <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                                Slide Show
+                            </button>
+                            <br />
+                            <br />
+
+                            <!-- Slide Show Component -->
+                            <!-- .slide-show -->
+                            <div class="slide-show" style="display:none;">
+                                <div class="carousel slide" data-ride="carousel">
+
+                                    <button type="button" class="btn btn-default btn-close-slide-show" title="Fechar Slide Show" aria-label="Fechar Slide Show">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    </button>
+
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#img-1" data-slide-to="0" class="active"></li>
+                                        <li data-target="#img-2" data-slide-to="1"></li>
+                                        <li data-target="#img-3" data-slide-to="2"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="http://lorempixel.com/400/500/people/1" alt="Imagem do álbum" class="img-responsive center-block">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://lorempixel.com/400/500/people/2" alt="Imagem do álbum" class="img-responsive center-block">
+                                        </div>
+                                        <div class="item">
+                                            <img src="http://lorempixel.com/500/500/people/3" alt="Imagem do álbum" class="img-responsive center-block">
+                                        </div>
+                                    </div>
+
+                                    <!-- Controls -->
+                                    <a class="left carousel-control" href="#prev-photo" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Anterior</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#next-photo" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Seguinte</span>
+                                    </a>
+                                </div>
+                                <div class="overlay"></div>
+                            </div>
+                            <!-- /.slide-show -->
+                            <!-- /Slide Show Component -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="node_modules/jquery/dist/jquery.min.js"><\/script>')
+    </script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
