@@ -51,9 +51,7 @@ body {
     right: 7px;
 }
 
-.panel-albums-list>.panel-body {
-    min-height: 200px;
-}
+.panel-albums-list>.panel-body {}
 
 .panel-albums-list-area {
     display: none;
@@ -62,7 +60,7 @@ body {
 
 /* State rules for 'Album List' */
 
-.panel-albums-list.has-items .panel-album-list-msg-empty {
+.panel-albums-list.has-items .panel-albums-list-msg-empty {
     display: none;
 }
 

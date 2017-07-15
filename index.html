@@ -64,45 +64,55 @@
                     <div class="panel-body">
 
                         <!-- When no album created -->
-                        <div class="place-holder-msg panel-album-list-msg-empty">
+                        <div class="place-holder-msg panel-albums-list-msg-empty">
                             <h5>Não há álbuns cadastrados <small>(clique no botão "+" para cadastrar seu primeiro álbum)</small></h5>
                         </div>
 
                         <!-- When one or more albums created -->
                         <div class="panel-albums-list-area row">
                             <div class="col-sm-12">
-                                <!-- Album items come here -->
 
-                                <!-- Album item #1 -->
-                                <div class="album-item">
-                                    <a href="#" class="btn-view-album" title="Álbum de pessoas">
-                                        <img src="http://lorempixel.com/230/180/people/1" class="album-item-img img-thumbnail">
-                                    </a>
-                                    <div class="album-item-details">
-                                        <a href="#" class="btn-view-album album-item-details-name" title="Álbum de pessoas">
-                                            Álbum de pessoas
-                                        </a>
-                                        <small class="album-item-details-total">
-                                            (1 foto)
-                                        </small>
-                                    </div>
-                                    <button type="button" class="btn btn-link btn-xs btn-delete-album" title="Excluir álbum" aria-label="Excluir álbum"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                                </div>
+                                <!-- When xs size -->
+                                <select class="panel-albums-select form-control visible-xs-block">
+                                    <option value="0">Álbum de pessoas</option>
+                                    <option value="0">Álbum de esportes</option>
+                                </select>
 
-                                <!-- Album item #2 -->
-                                <div class="album-item">
-                                    <a href="#" class="btn-view-album" title="Álbum de esportes">
-                                        <img src="http://lorempixel.com/230/230/sports/1" class="album-item-img img-thumbnail">
-                                    </a>
-                                    <div class="album-item-details">
-                                        <a href="#" class="btn-view-album album-item-details-name" title="Álbum de esportes">
-                                            Álbum de esportes
+                                <!-- When non-xs size -->
+                                <div class="panel-albums-list hidden-xs">
+                                    <!-- Album items come here -->
+
+                                    <!-- Album item #1 -->
+                                    <div class="album-item">
+                                        <a href="#" class="btn-view-album" title="Álbum de pessoas">
+                                            <img src="http://lorempixel.com/230/180/people/1" class="album-item-img img-thumbnail">
                                         </a>
-                                        <small class="album-item-details-total">
-                                            (3 fotos)
-                                        </small>
+                                        <div class="album-item-details">
+                                            <a href="#" class="btn-view-album album-item-details-name" title="Álbum de pessoas">
+                                                Álbum de pessoas
+                                            </a>
+                                            <small class="album-item-details-total">
+                                                (1 foto)
+                                            </small>
+                                        </div>
+                                        <button type="button" class="btn btn-link btn-xs btn-delete-album" title="Excluir álbum" aria-label="Excluir álbum"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
                                     </div>
-                                    <button type="button" class="btn btn-link btn-xs btn-delete-album" title="Excluir álbum" aria-label="Excluir álbum"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+
+                                    <!-- Album item #2 -->
+                                    <div class="album-item">
+                                        <a href="#" class="btn-view-album" title="Álbum de esportes">
+                                            <img src="http://lorempixel.com/230/230/sports/1" class="album-item-img img-thumbnail">
+                                        </a>
+                                        <div class="album-item-details">
+                                            <a href="#" class="btn-view-album album-item-details-name" title="Álbum de esportes">
+                                                Álbum de esportes
+                                            </a>
+                                            <small class="album-item-details-total">
+                                                (3 fotos)
+                                            </small>
+                                        </div>
+                                        <button type="button" class="btn btn-link btn-xs btn-delete-album" title="Excluir álbum" aria-label="Excluir álbum"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                    </div>
                                 </div>
 
                             </div>
