@@ -114,6 +114,7 @@ body {
 .panel-photos-title {}
 
 .btn-slide-show {
+    display: none;
     position: absolute;
     top: 7px;
     right: 30px;
@@ -179,7 +180,8 @@ body {
     display: none;
 }
 
-.panel-photos.album-selected.has-photos .panel-photos-main-area {
+.panel-photos.album-selected.has-photos .panel-photos-main-area,
+.panel-photos.album-selected.has-photos .btn-slide-show {
     display: block;
 }
 

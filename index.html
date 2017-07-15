@@ -54,10 +54,10 @@
             <!-- First column: Album list -->
             <div class="col-sm-3">
                 <!-- Control class: has-items -->
-                <div class="panel panel-default panel-albums-list has-items">
+                <div class="panel panel-default panel-albums-list">
                     <div class="panel-heading">
                         <h3 class="panel-title">Todos os álbuns</h3>
-                        <button type="button" class="btn btn-primary btn-xs btn-add-album" title="Novo álbum" aria-label="Novo álbum">
+                        <button type="button" class="btn btn-primary btn-xs btn-add-album" title="Novo álbum" aria-label="Novo álbum" data-toggle="modal" data-target="#modal-add-album">
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                         </button>
                     </div>
@@ -74,52 +74,18 @@
 
                                 <!-- When xs size -->
                                 <select class="panel-albums-select form-control visible-xs-block">
-                                    <option value="0">Álbum de pessoas</option>
-                                    <option value="0">Álbum de esportes</option>
                                 </select>
 
                                 <!-- When non-xs size -->
-                                <div class="panel-albums-list hidden-xs">
+                                <div class="panel-albums-items hidden-xs">
                                     <!-- Album items come here -->
-
-                                    <!-- Album item #1 -->
-                                    <div class="album-item">
-                                        <a href="#" class="btn-view-album" title="Álbum de pessoas">
-                                            <img src="http://lorempixel.com/230/180/people/1" class="album-item-img img-thumbnail">
-                                        </a>
-                                        <div class="album-item-details">
-                                            <a href="#" class="btn-view-album album-item-details-name" title="Álbum de pessoas">
-                                                Álbum de pessoas
-                                            </a>
-                                            <small class="album-item-details-total">
-                                                (1 foto)
-                                            </small>
-                                        </div>
-                                        <button type="button" class="btn btn-link btn-xs btn-delete-album" title="Excluir álbum" aria-label="Excluir álbum"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                                    </div>
-
-                                    <!-- Album item #2 -->
-                                    <div class="album-item">
-                                        <a href="#" class="btn-view-album" title="Álbum de esportes">
-                                            <img src="http://lorempixel.com/230/230/sports/1" class="album-item-img img-thumbnail">
-                                        </a>
-                                        <div class="album-item-details">
-                                            <a href="#" class="btn-view-album album-item-details-name" title="Álbum de esportes">
-                                                Álbum de esportes
-                                            </a>
-                                            <small class="album-item-details-total">
-                                                (3 fotos)
-                                            </small>
-                                        </div>
-                                        <button type="button" class="btn btn-link btn-xs btn-delete-album" title="Excluir álbum" aria-label="Excluir álbum"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                                    </div>
                                 </div>
 
                             </div>
                         </div>
                     </div>
                     <div class="panel-footer">
-                        0 álbuns criados
+                        0 álbuns
                     </div>
                 </div>
             </div>
@@ -127,9 +93,9 @@
             <!-- Second column: Album photos -->
             <div class="col-sm-9">
                 <!-- Control classes: album-selected has-photos -->
-                <div class="panel panel-default panel-photos album-selected has-photos">
+                <div class="panel panel-default panel-photos">
                     <div class="panel-heading">
-                        <h2 class="panel-title">Álbum: <span class="panel-photos-title">Álbum de pessoas</span></h2>
+                        <h2 class="panel-title">Álbum: <span class="panel-photos-title">(nenhum álbum selecionado)</span></h2>
                         <button type="button" class="btn btn-primary btn-xs btn-slide-show" title="Visualizar álbum em slide show" aria-label="Visualizar álbum em slide show">
                             <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                             Slide Show
@@ -151,33 +117,13 @@
                         <div class="panel-photos-main-area">
                             <div class="row">
                                 <!-- Album Photos come here, inside col-md -->
-                                <div class="col-xs-6 col-sm-3 photo-item">
-                                    <img src="http://lorempixel.com/300/300/people/1" class="img-responsive img-rounded photo-img">
-                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                                </div>
-                                <div class="col-xs-6 col-sm-3 photo-item">
-                                    <img src="http://lorempixel.com/300/300/people/9" class="img-responsive img-rounded photo-img">
-                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                                </div>
-                                <div class="col-xs-6 col-sm-3 photo-item">
-                                    <img src="http://lorempixel.com/300/300/people/2" class="img-responsive img-rounded photo-img">
-                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                                </div>
-                                <div class="col-xs-6 col-sm-3 photo-item">
-                                    <img src="http://lorempixel.com/300/300/people/3" class="img-responsive img-rounded photo-img">
-                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                                </div>
-                                <div class="col-xs-6 col-sm-3 photo-item">
-                                    <img src="http://lorempixel.com/300/300/people/7" class="img-responsive img-rounded photo-img">
-                                    <button type="button" class="btn btn-link btn-xs btn-delete-photo" title="Excluir foto" aria-label="Excluir foto"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                                </div>
                             </div>
                         </div>
 
                         <!-- As an independent component, the ".search-area" has its visibility
                              handed via JavaScript -->
                         <!-- Control class: hidden -->
-                        <div class="search-area panel panel-primary">
+                        <div class="search-area panel panel-primary hidden">
                             <div class="panel-heading">
                                 Pesquise fotos no Shutterstock
                             </div>
@@ -200,27 +146,7 @@
                                 <div class="search-area-results hidden">
                                     <h4>Resultado para a busca <small> (clique na foto para adicioná-la ao seu álbum local)</small></h4>
                                     <div class="row">
-                                        <div class="col-xs-6 col-sm-3 col-md-2">
-                                            <img src="http://lorempixel.com/160/160/people/1" class="img-responsive img-rounded">
-                                        </div>
-                                        <div class="col-xs-6 col-sm-3 col-md-2">
-                                            <img src="http://lorempixel.com/160/160/people/2" class="img-responsive img-rounded">
-                                        </div>
-                                        <div class="col-xs-6 col-sm-3 col-md-2">
-                                            <img src="http://lorempixel.com/160/160/people/3" class="img-responsive img-rounded">
-                                        </div>
-                                        <div class="col-xs-6 col-sm-3 col-md-2">
-                                            <img src="http://lorempixel.com/160/160/people/4" class="img-responsive img-rounded">
-                                        </div>
-                                        <div class="col-xs-6 col-sm-3 col-md-2">
-                                            <img src="http://lorempixel.com/160/160/people/5" class="img-responsive img-rounded">
-                                        </div>
-                                        <div class="col-xs-6 col-sm-3 col-md-2">
-                                            <img src="http://lorempixel.com/160/160/people/6" class="img-responsive img-rounded">
-                                        </div>
-                                        <div class="col-xs-6 col-sm-3 col-md-2">
-                                            <img src="http://lorempixel.com/160/160/people/7" class="img-responsive img-rounded">
-                                        </div>
+                                        <!-- Result photos come here -->
                                     </div>
                                 </div>
                             </div>
@@ -274,6 +200,50 @@
     </div>
     <!-- /.slide-show -->
 
+    <!-- Modal Add Album -->
+    <div class="modal fade" id="modal-add-album" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Novo álbum</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="album-name">Nome do álbum</label>
+                        <input type="text" class="form-control" id="album-name" placeholder="Nome do álbum">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-add-album-cancel" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary btn-add-album-save">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Modal Add Album -->
+
+    <!-- Templates -->
+    <div id="templates" style="display: none;">
+
+        <!-- Template Album Item -->
+        <div id="template-album-item" class="album-item">
+            <a href="#/album/{0}/view" class="btn-view-album" title="{1}">
+                <img src="" class="album-item-img img-thumbnail">
+            </a>
+            <div class="album-item-details">
+                <a href="#/album/{0}/view" class="btn-view-album album-item-details-name" title="{1}">
+                    {1}
+                </a>
+                <small class="album-item-details-total">
+                    {3}
+                </small>
+            </div>
+            <button type="button" class="btn btn-link btn-xs btn-delete-album" title="Excluir álbum" aria-label="Excluir álbum" data-href="#/album/{0}/delete"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+        </div>
+    </div>
+    <!-- /Templates -->
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
@@ -282,6 +252,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/album.js"></script>
+    <script src="js/widgets.js"></script>
 </body>
 
 </html>
