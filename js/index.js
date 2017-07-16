@@ -3,13 +3,16 @@
  */
 $(document).ready(function() {
 
-    // Instancia o widget PanelPhotosWidget
+    // Instancia o widgets AlbumListWidget e PanelPhotosWidget
+    albumList = new AlbumListWidget();
     panelPhotos = new PanelPhotosWidget();
 
     // Botão abrir modal Novo Álbum
     $('.btn-add-album').on('click', function(e) {
         $('#album-name').val('');
-        setTimeout(function(){$('#album-name').focus()}, 500);
+        setTimeout(function() {
+            $('#album-name').focus()
+        }, 500);
     });
 
     // Botão salvar Novo Álbum
@@ -23,16 +26,45 @@ $(document).ready(function() {
 
         // Cria novo widget AlbumWidget
         var albumWidget = new AlbumWidget(albumModel);
+        albumList.addAlbum(albumWidget, albumModel);
 
-        $('.panel-albums-items').append(albumWidget.getElem());
-        $('.panel-albums-select').append('<option value="' + albumModel.getId() + '">' + albumModel.getName() + '</option>');
-        $('.panel-albums-list').addClass('has-items');
-        $('.panel-albums-list > .panel-footer').text(db.length + (db.length == 1 ? ' álbum' : ' álbuns'));
+        // Fecha modal
         $('#modal-add-album').modal('hide');
 
         // Seleciona álbum no painel de fotos
         panelPhotos.selectAlbum(albumModel.getId());
     });
+
+    // Seleciona álbum
+    $('.panel-albums-list').delegate('.btn-view-album', 'click', function(e) {
+        e.preventDefault();
+
+        var albumId = $(this).attr('href').replace('#/album/', '').replace('/view', '');
+        panelPhotos.selectAlbum(albumId);
+    });
+
+    // Seleciona álbum (mobile)
+    $('.panel-albums-select').on('change', function(e) {
+        panelPhotos.selectAlbum($(this).val());
+    });
+
+    // Exclui álbum
+    $('.panel-albums-list').delegate('.btn-delete-album', 'click', function(e) {
+        e.preventDefault();
+
+        var albumId = $(this).attr('data-href').replace('#/album/', '').replace('/delete', '');
+        var album = new Album();
+        album.load(albumId);
+        var isToExclude = confirm('Tem ceteza que deseja excluir o álbum "' + album.getName() + '"');
+
+        if (isToExclude) {
+            album.remove(albumId);
+            albumList.removeAlbum($(this).parent());
+            if (panelPhotos.getSelectedAlbumId() == albumId)
+                panelPhotos.deselectAlbum();
+        }
+    });
+
 
     // Display slide-show
     $('.btn-slide-show').on('click', function(e) {
@@ -54,12 +86,6 @@ $(document).ready(function() {
     });
 
     // Prevent default to other links
-    $('.btn-view-album').on('click', function(e) {
-        e.preventDefault();
-    });
-    $('.btn-delete-album').on('click', function(e) {
-        e.preventDefault();
-    });
     $('.btn-delete-photo').on('click', function(e) {
         e.preventDefault();
     });

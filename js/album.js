@@ -1,7 +1,7 @@
 /**
  * Album Class
  */
-function Album (name) {
+function Album(name) {
     this.id = undefined;
     this.name = name;
     this.photos = new Array();
@@ -51,13 +51,48 @@ Album.prototype.removePhoto = function(url) {
 };
 
 /**
- * Removes photo to the Album
+ * Persist album
  */
 Album.prototype.save = function() {
+    this.id = nextId++;
     db.push(this);
-    this.id = db.length-1;
+};
+
+/**
+ * Load an album
+ */
+Album.prototype.load = function(id) {
+    var album = db.find(findById, id);
+    if (album == undefined) {
+        this.id = undefined;
+        this.name = undefined;
+        return false;
+    } else {
+        this.id = album.id;
+        this.name = album.name;
+        this.photos = album.photos;
+        return true;
+    }
+};
+
+/**
+ * Remove an album
+ */
+Album.prototype.remove = function(id) {
+    var idx = db.findIndex(findById, id);
+    if (idx == -1) {
+        return false;
+    } else {
+        db.splice(idx, 1);
+        return true;
+    }
 };
 
 
 // Banco de dados
+nextId = 1;
 db = [];
+
+function findById(currentValue) {
+    return currentValue.getId() === parseInt(this.valueOf());
+}
