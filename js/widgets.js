@@ -144,3 +144,22 @@ function SearchAreaWidget() {
 SearchAreaWidget.prototype.getElem = function() {
     return this.$elem;
 };
+
+SearchAreaWidget.prototype.fillResults = function(data) {
+    var $searchAreaResults = $('.search-area-results');
+    var $searchAreaResultsRow = $('.search-area-results > .row');
+    $searchAreaResults.removeClass('hidden');
+    $searchAreaResultsRow.empty();
+
+    if (data.total_count === 0) {
+        $searchAreaResults.append('<p class="search-area-results-no-results">Nenhum resultado para a busca realizada.</p>');
+    }
+    else {
+        $.each(data.data, function(i, item) {
+            var $thumb = $('#template-photo-result').clone();
+            $thumb.find('img').attr('src', item.assets.large_thumb.url);
+            $thumb.find('img').attr('data-img-src', item.assets.preview.url);
+            $thumb.appendTo($searchAreaResultsRow);
+        });
+    }
+};

@@ -71,7 +71,7 @@ $(document).ready(function() {
         e.preventDefault();
 
         var searchInput = $('.search-area-input').val();
-        search('per_page=10&query=' + searchInput);
+        search('per_page=18&width=400&height=400&query=' + searchInput);
 
     });
 

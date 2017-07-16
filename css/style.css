@@ -212,6 +212,16 @@ body {
     margin-bottom: 15px;
 }
 
+.search-area-results-no-results {
+    padding: 40px 0 25px;
+    color: #999;
+    text-align: center;
+}
+
+.btn-add-photo {
+    cursor: pointer;
+}
+
 
 /** Module 'Slide Show' **/
 

@@ -57,15 +57,7 @@ function search(opts) {
             }
         })
         .done(function(data) {
-            console.log(data);
-            // if (data.total_count === 0) {
-            //     $container.append('<p>No Results</p>');
-            //     return;
-            // }
-            // $.each(data.data, function(i, item) {
-            //     // var component = createComponentFunc(item, minHeightCSS);
-            //     // $container.append(component);
-            // });
+            searchArea.fillResults(data);
         })
         .fail(function(xhr, status, err) {
             alert('Failed to retrieve image search results:\n' + JSON.stringify(xhr.responseJSON, null, 2));
