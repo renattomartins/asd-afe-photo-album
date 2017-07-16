@@ -15,7 +15,9 @@ The **Photo Album** is a web application to create and show photo albums using s
 - GitFlow Workflow
 - Tower 2.4.0 for OSx
 
-## v0.1.0 (old version)
+## Released versions
+
+### v0.1.0 (old version)
 - All markup done!
 - All styles done!
 - Some basic JavaScript feature as a POC.
