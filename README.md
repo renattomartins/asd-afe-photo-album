@@ -15,19 +15,23 @@ The **Photo Album** is a web application to create and show photo albums using s
 - GitFlow Workflow
 - Tower 2.4.0 for OSx
 
-## This version (v0.1.0)
+## Released versions
+
+### v0.1.0 (old version)
 - All markup done!
 - All styles done!
 - Some basic JavaScript feature as a POC.
 
+### v0.2.0 (current version)
+ - Responsive layout
+ - Integration and communication with the Shutterstock working!
+ - OAuth authentication and authorization working!
+ - App minimally functional!
+
 ## Roadmap
 
-### Version 0.2.0
- - Make it responsive
- - Make the communications with the photo service
- - Make functional (just mockups for now)
-
 ### Version 0.3.0
+ - Reorganize the JS code using better practices for code reuse [important!]
  - To include [Bootlint](http://getbootstrap.com/getting-started/#tools-bootlint)
  - To include some HTML5 validity tool (like [vnu.jar](https://validator.github.io/validator/), [grunt-html](https://www.npmjs.com/package/grunt-html) or [grunt-html-validation](https://www.npmjs.com/package/grunt-html-validation))
  - To include [HTML_CodeSniffer](https://github.com/squizlabs/HTML_CodeSniffer) that cover the three conformance levels of the [W3C Web Content Accessibility Guidelines (WCAG) 2.0](https://www.w3.org/TR/WCAG20/)
