@@ -3,6 +3,9 @@
  */
 $(document).ready(function() {
 
+    // Instancia o widget PanelPhotosWidget
+    panelPhotos = new PanelPhotosWidget();
+
     // Botão abrir modal Novo Álbum
     $('.btn-add-album').on('click', function(e) {
         $('#album-name').val('');
@@ -26,6 +29,9 @@ $(document).ready(function() {
         $('.panel-albums-list').addClass('has-items');
         $('.panel-albums-list > .panel-footer').text(db.length + (db.length == 1 ? ' álbum' : ' álbuns'));
         $('#modal-add-album').modal('hide');
+
+        // Seleciona álbum no painel de fotos
+        panelPhotos.selectAlbum(albumModel.getId());
     });
 
     // Display slide-show

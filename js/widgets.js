@@ -30,17 +30,37 @@ AlbumWidget.prototype.getElem = function() {
     return this.$elem;
 };
 
+
+
 /**
  * PanelPhotosWidget Class
  */
- function PanelPhotosWidget() {
-     this.$elem = $('.panel-photos');
+function PanelPhotosWidget() {
+    this.$elem = $('.panel-photos');
+}
 
- }
+/**
+ * Get DOM element
+ */
+PanelPhotosWidget.prototype.getElem = function() {
+    return this.$elem;
+};
 
- /**
-  * Get DOM element
-  */
- AlbumWidget.prototype.getElem = function() {
-     return this.$elem;
- };
+/**
+ * Select an album
+ */
+PanelPhotosWidget.prototype.selectAlbum = function(albumId) {
+
+    var currentAlbum = db[albumId];
+
+    this.$elem.addClass('album-selected').attr('data-id', albumId);
+    if (currentAlbum.photos.length > 0) {
+        this.$elem.addClass('has-photos');
+    }
+    this.$elem.find('.panel-photos-title').text(currentAlbum.name);
+
+    this.$elem.find('.search-area').hide().removeClass('hidden').slideDown();
+    setTimeout(function() {
+        $('.search-area-input').focus();
+    }, 600);
+};
