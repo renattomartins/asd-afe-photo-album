@@ -95,10 +95,34 @@ $(document).ready(function() {
         panelPhotos.addPhoto(imgSrc);
     });
 
+    // Delea foto
+    $('.btn-delete-photo').on('click', function(e) {
+        e.preventDefault();
+
+        $photo = $(this).parent().remove();
+        var imgSrc = $photo.children('.photo-img').attr('src');
+
+        var album = new Album();
+        album.load(panelPhotos.getSelectedAlbumId());
+        album.removePhoto(imgSrc);
+    });
+
 
     // Display slide-show
     $('.btn-slide-show').on('click', function(e) {
         e.preventDefault();
+
+        var album = new Album();
+        album.load(panelPhotos.getSelectedAlbumId());
+        
+        $('.carousel-indicators').empty();
+        $('.carousel-inner').empty();
+
+        $.each(album.getPhotos(), function(i, imgSrc) {
+            $('.carousel-indicators').append('<li class="' + (i == 0 ? 'active' : '') + '" data-target="#img-' + (i+1) + '" data-slide-to="' + i + '"></li>');
+            $('.carousel-inner').append('<div class="item' + (i == 0 ? ' active' : '') + '"><img src="' + imgSrc + '" alt="Imagem do álbum" class="img-responsive center-block"></div>');
+        });
+        $('.carousel').carousel();
         $('.slide-show').show();
     });
 
@@ -108,13 +132,13 @@ $(document).ready(function() {
         $('.slide-show').hide();
     });
 
-
-
-    // Prevent default to other links
-    $('.btn-delete-photo').on('click', function(e) {
+    // Slide show controls
+    $('.carousel-control.left').on('click', function(e) {
         e.preventDefault();
+        $('.carousel').carousel('prev');
     });
-    $('.carousel-control').on('click', function(e) {
+    $('.carousel-control.right').on('click', function(e) {
         e.preventDefault();
+        $('.carousel').carousel('next');
     });
 });

@@ -109,9 +109,17 @@ PanelPhotosWidget.prototype.selectAlbum = function(albumId) {
     var currentAlbum = new Album();
     currentAlbum.load(albumId);
 
+    this.$elem.removeClass('has-photos');
+
+    $('.panel-photos-main-area > .row').empty();
+
     this.$elem.addClass('album-selected').attr('data-id', albumId);
     if (currentAlbum.getTotalPhotos() > 0) {
         this.$elem.addClass('has-photos');
+
+        $.each(currentAlbum.getPhotos(), function(i, imgSrc) {
+            panelPhotos.addPhoto(imgSrc);
+        });
     }
     this.$elem.find('.panel-photos-title').text(currentAlbum.getName());
     this.$elem.find('.search-area').hide().removeClass('hidden').slideDown();
