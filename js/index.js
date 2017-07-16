@@ -72,7 +72,27 @@ $(document).ready(function() {
 
         var searchInput = $('.search-area-input').val();
         search('per_page=18&width=400&height=400&query=' + searchInput);
+    });
 
+    // Adiciona foto ao álbum pessoal
+    $('.panel-photos').delegate('.btn-add-photo', 'click', function(e) {
+        e.preventDefault();
+
+        var imgSrc = $(this).attr('data-img-src');
+        var album = new Album();
+        album.load(panelPhotos.getSelectedAlbumId());
+        album.addPhoto(imgSrc);
+
+        var $album = $('#album-item-' + album.getId());
+        var albumImage = $album.find('.album-item-img').attr('src');
+        if (albumImage == 'imgs/default.png') {
+            $album.find('.album-item-img').attr('src', imgSrc);
+        }
+
+        $('#album-item-' + album.getId() + ' .album-item-details-total')
+            .text('(' + album.getTotalPhotos() + (album.getTotalPhotos() == 1 ? ' foto)' : ' fotos)'));
+
+        panelPhotos.addPhoto(imgSrc);
     });
 
 
@@ -89,11 +109,6 @@ $(document).ready(function() {
     });
 
 
-    // Display search-area-results
-    // $('').on('click', function(e) {
-    //     e.preventDefault();
-    //     $('.search-area-results').toggleClass('hidden');
-    // });
 
     // Prevent default to other links
     $('.btn-delete-photo').on('click', function(e) {

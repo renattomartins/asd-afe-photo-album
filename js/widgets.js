@@ -55,7 +55,7 @@ function AlbumWidget(albumModel) {
     this.$elem = $('#template-album-item').clone();
 
     // Populate
-    this.$elem.removeAttr('id');
+    this.$elem.attr('id', 'album-item-' + albumModel.getId());
     this.$elem.find('.btn-view-album').attr('href', function(i, val) {
         $(this).attr('href', val.replace('{0}', albumModel.getId()));
     });
@@ -129,6 +129,18 @@ PanelPhotosWidget.prototype.deselectAlbum = function() {
     this.$elem.find('.search-area').addClass('hidden');
 };
 
+/**
+ * Add photo item to the panel photos
+ */
+PanelPhotosWidget.prototype.addPhoto = function(imgSrc) {
+    var $photo = $('#template-photo-item').clone();
+    $photo.removeAttr('id');
+    $photo.find('img').attr('src', imgSrc);
+    $photo.find('btn-delete-photo').attr('data-src-delete', imgSrc);
+    $photo.appendTo($('.panel-photos-main-area > .row'));
+    this.$elem.addClass('has-photos');
+};
+
 
 
 /**
@@ -157,6 +169,7 @@ SearchAreaWidget.prototype.fillResults = function(data) {
     else {
         $.each(data.data, function(i, item) {
             var $thumb = $('#template-photo-result').clone();
+            $thumb.removeAttr('id');
             $thumb.find('img').attr('src', item.assets.large_thumb.url);
             $thumb.find('img').attr('data-img-src', item.assets.preview.url);
             $thumb.appendTo($searchAreaResultsRow);

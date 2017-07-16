@@ -64,27 +64,3 @@ function search(opts) {
         });
     return jqxhr;
 }
-
-/* Render functions */
-// Create image wrapper component
-function renderImageComponent(image, minHeightCSS) {
-    if (!image || !image.assets || !image.assets.large_thumb || !image.assets.large_thumb.url) return;
-    var wrapper = $('<div>');
-    var thumbWrapper = $('<div>');
-    var thumbnail = $('<img>');
-    var description = $('<p>');
-    $(thumbnail)
-        .click(fetchDetails)
-        .attr('id', image.id)
-        .attr('src', image.assets.large_thumb.url)
-        .attr('title', image.description);
-    $(thumbWrapper)
-        .addClass('thumbnail-crop')
-        .css('height', image.assets.large_thumb.height)
-        .css('width', image.assets.large_thumb.width)
-        .append(thumbnail);
-    $(wrapper)
-        .addClass('image-float-wrapper image ' + minHeightCSS)
-        .append(thumbWrapper);
-    return wrapper;
-}
