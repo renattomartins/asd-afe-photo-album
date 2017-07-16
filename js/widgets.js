@@ -128,3 +128,19 @@ PanelPhotosWidget.prototype.deselectAlbum = function() {
     this.$elem.find('.panel-photos-title').text("(nenhum álbum selecionado)");
     this.$elem.find('.search-area').addClass('hidden');
 };
+
+
+
+/**
+ * SearchAreaWidget Class
+ */
+function SearchAreaWidget() {
+    this.$elem = $('.search-area');
+}
+
+/**
+ * Get DOM element
+ */
+SearchAreaWidget.prototype.getElem = function() {
+    return this.$elem;
+};

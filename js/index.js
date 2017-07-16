@@ -6,6 +6,7 @@ $(document).ready(function() {
     // Instancia o widgets AlbumListWidget e PanelPhotosWidget
     albumList = new AlbumListWidget();
     panelPhotos = new PanelPhotosWidget();
+    searchArea = new SearchAreaWidget();
 
     // Botão abrir modal Novo Álbum
     $('.btn-add-album').on('click', function(e) {
@@ -65,6 +66,15 @@ $(document).ready(function() {
         }
     });
 
+    // Realiza pesquisa
+    $('.btn-do-search').on('click', function(e) {
+        e.preventDefault();
+
+        var searchInput = $('.search-area-input').val();
+        search('per_page=10&query=' + searchInput);
+
+    });
+
 
     // Display slide-show
     $('.btn-slide-show').on('click', function(e) {
@@ -80,10 +90,10 @@ $(document).ready(function() {
 
 
     // Display search-area-results
-    $('.btn-do-search').on('click', function(e) {
-        e.preventDefault();
-        $('.search-area-results').toggleClass('hidden');
-    });
+    // $('').on('click', function(e) {
+    //     e.preventDefault();
+    //     $('.search-area-results').toggleClass('hidden');
+    // });
 
     // Prevent default to other links
     $('.btn-delete-photo').on('click', function(e) {
