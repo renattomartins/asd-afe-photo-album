@@ -1,4 +1,4 @@
-var clientId = '81f0d84c5dee8b11eeee';
+var clientId = '26e03-3da3b-1cda6-ad368-e7c96-9fc73';
 var authorizationCode = '';
 var access_token = '';
 var state = 'test_localhost';
@@ -17,7 +17,7 @@ else {
             url: API_URL + '/oauth/access_token',
             data: {
                 client_id: clientId,
-                client_secret: '36f38e305acf88ffd1aba4821865261f0c1fe626',
+                client_secret: 'f9648-77e91-2320a-601d6-b0c81-c6aac',
                 code: authorizationCode,
                 grant_type: 'authorization_code'
             }
